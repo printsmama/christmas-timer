@@ -1,0 +1,273 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.countdown-container {
+    background: linear-gradient(145deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.snow {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: snow-fall 3s linear infinite;
+}
+
+@keyframes snow-fall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(calc(100% + 10px)); }
+}
+
+.countdown-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-title::before,
+.countdown-title::after {
+    content: "🎄";
+    font-size: 2.5rem;
+}
+
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.countdown-segment {
+    background: rgba(255,255,255,0.15);
+    border-radius: 15px;
+    padding: 1.5rem;
+    min-width: 140px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.countdown-segment:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-number {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.countdown-label {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin: 0.5rem 0 0;
+    letter-spacing: 2px;
+}
+
+.festive-decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.decoration {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decoration:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.decoration:nth-child(2) { top: 15%; right: 5%; animation-delay: 0.5s; }
+.decoration:nth-child(3) { bottom: 10%; left: 8%; animation-delay: 1s; }
+.decoration:nth-child(4) { bottom: 15%; right: 8%; animation-delay: 1.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.christmas-scene {
+    text-align: center;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.scene-element {
+    font-size: 3.5rem;
+    animation: twinkle 2s infinite;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(0.95); }
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-section h1,
+.content-section h2,
+.content-section h3 {
+    color: #2a5298;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+}
+
+.featured-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-left: 4px solid #2a5298;
+}
+
+.featured-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.download-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+}
+
+.download-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.download-title {
+    font-size: 1.1rem;
+    color: #2a5298;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.download-button {
+    background: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.download-button:hover {
+    background: #45a049;
+}
+
+.free-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4081;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .countdown-title {
+        font-size: 2.2rem;
+    }
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+    .countdown-segment {
+        min-width: 110px;
+        padding: 1rem;
+    }
+    .scene-element {
+        font-size: 2.5rem;
+    }
+    .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-container {
+        padding: 2rem 1rem;
+    }
+    .countdown-title {
+        font-size: 1.8rem;
+    }
+    .countdown-number {
+        font-size: 2rem;
+    }
+    .countdown-segment {
+        min-width: 90px;
+    }
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
+}
